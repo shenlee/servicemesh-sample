@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package sample.reviews;
+
+option java_multiple_files = true;
+option java_outer_classname = "ReviewsProto";
+option java_package = "sample.reviews.grpc";
+
+
+//import "google/protobuf/empty.proto";
+
+
+service Reviews {
+	 rpc BookReviewsById(BookReviewsRequest) returns (BookReviewsResponse) {}
+}
+
+message Review {
+  // reviewer name
+  string reviewer = 1;
+  //review text
+  string text = 2;
+  //rating_star
+  int64 ratingstar = 3;
+}
+
+// Request message for BookReviewsById call.
+message BookReviewsRequest {
+  int64 productId = 1;
+}
+
+// Response to BookReviewsById call.
+message BookReviewsResponse {
+  int64 productId = 1;
+  repeated Review reviews = 2;
+}

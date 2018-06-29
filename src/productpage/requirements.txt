@@ -1,0 +1,9 @@
+requests
+flask==0.12.2
+flask_json
+flask_bootstrap
+json2html
+simplejson
+gevent
+grpcio
+grpcio-tools
